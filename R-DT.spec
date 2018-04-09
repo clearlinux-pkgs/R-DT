@@ -4,12 +4,12 @@
 #
 Name     : R-DT
 Version  : 0.4
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/DT_0.4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.4.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
 Group    : Development/Tools
-License  : GPL-3.0 MIT
+License  : Apache-2.0 GPL-3.0 MIT
 Requires: R-crosstalk
 Requires: R-htmltools
 Requires: R-htmlwidgets
@@ -31,11 +31,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521195061
+export SOURCE_DATE_EPOCH=1523304429
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521195061
+export SOURCE_DATE_EPOCH=1523304429
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
