@@ -1,9 +1,2 @@
 # This file contains recursive sources that require this package
-R-brms
-R-broom
-R-caret
-R-modelr
-R-recipes
-R-rstanarm
 R-shinystan
-R-tidyverse
