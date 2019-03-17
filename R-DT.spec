@@ -4,26 +4,22 @@
 #
 Name     : R-DT
 Version  : 0.5
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/DT_0.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.5.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT
-Requires: R-crosstalk
-Requires: R-htmltools
-Requires: R-htmlwidgets
-Requires: R-promises
+Requires: R-jsonlite
 BuildRequires : R-crosstalk
 BuildRequires : R-htmltools
 BuildRequires : R-htmlwidgets
+BuildRequires : R-jsonlite
 BuildRequires : R-promises
 BuildRequires : buildreq-R
 
 %description
-JavaScript library 'DataTables' (typically via R Markdown or Shiny). The
-    'DataTables' library has been included in this R package. The package name
-    'DT' is an abbreviation of 'DataTables'.
+After you render a table on the page, you can use its output id to access some information about it. Currently the indices of rows on the current page and all pages are available (after filtering is applied). Suppose your output id is `foo`, `input$foo_rows_current` is the indices of rows on the current page, and `input$foo_rows_all` is the indices of rows on all pages.
 
 %prep
 %setup -q -c -n DT
@@ -33,10 +29,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541476249
+export SOURCE_DATE_EPOCH=1552851413
 
 %install
-export SOURCE_DATE_EPOCH=1541476249
+export SOURCE_DATE_EPOCH=1552851413
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library DT|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  DT || :
 
 
 %files
