@@ -4,18 +4,23 @@
 #
 Name     : R-DT
 Version  : 0.5
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/DT_0.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.5.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT
-Requires: R-jsonlite
+Requires: R-httpuv
+Requires: R-xtable
+Requires: R-yaml
 BuildRequires : R-crosstalk
 BuildRequires : R-htmltools
 BuildRequires : R-htmlwidgets
+BuildRequires : R-httpuv
 BuildRequires : R-jsonlite
 BuildRequires : R-promises
+BuildRequires : R-xtable
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -29,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552851413
+export SOURCE_DATE_EPOCH=1552904578
 
 %install
-export SOURCE_DATE_EPOCH=1552851413
+export SOURCE_DATE_EPOCH=1552904578
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "

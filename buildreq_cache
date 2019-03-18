@@ -2,5 +2,8 @@
 R-crosstalk
 R-htmltools
 R-htmlwidgets
+R-httpuv
 R-jsonlite
 R-promises
+R-xtable
+R-yaml
