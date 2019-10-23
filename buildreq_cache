@@ -1,4 +1,4 @@
-0.7
+0.9
 R-crosstalk
 R-htmltools
 R-htmlwidgets
@@ -7,3 +7,4 @@ R-jsonlite
 R-promises
 R-xtable
 R-yaml
+util-linux

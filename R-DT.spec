@@ -4,7 +4,7 @@
 #
 Name     : R-DT
 Version  : 0.9
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/DT_0.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.9.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
@@ -23,6 +23,7 @@ BuildRequires : R-jsonlite
 BuildRequires : R-magrittr
 BuildRequires : R-promises
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 After you render a table on the page, you can use its output id to access some information about it. Currently the indices of rows on the current page and all pages are available (after filtering is applied). Suppose your output id is `foo`, `input$foo_rows_current` is the indices of rows on the current page, and `input$foo_rows_all` is the indices of rows on all pages.
@@ -35,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568909021
+export SOURCE_DATE_EPOCH=1571820894
 
 %install
-export SOURCE_DATE_EPOCH=1568909021
+export SOURCE_DATE_EPOCH=1571820894
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
