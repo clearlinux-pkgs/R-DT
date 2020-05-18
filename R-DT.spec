@@ -4,7 +4,7 @@
 #
 Name     : R-DT
 Version  : 0.13
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/DT_0.13.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.13.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
@@ -25,25 +25,28 @@ BuildRequires : R-promises
 BuildRequires : buildreq-R
 
 %description
-After you render a table on the page, you can use its output id to access some information about it. Currently the indices of rows on the current page and all pages are available (after filtering is applied). Suppose your output id is `foo`, `input$foo_rows_current` is the indices of rows on the current page, and `input$foo_rows_all` is the indices of rows on all pages.
+JavaScript library 'DataTables' (typically via R Markdown or Shiny). The
+    'DataTables' library has been included in this R package. The package name
+    'DT' is an abbreviation of 'DataTables'.
 
 %prep
 %setup -q -c -n DT
+cd %{_builddir}/DT
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585068727
+export SOURCE_DATE_EPOCH=1589769324
 
 %install
-export SOURCE_DATE_EPOCH=1585068727
+export SOURCE_DATE_EPOCH=1589769324
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
