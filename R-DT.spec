@@ -4,7 +4,7 @@
 #
 Name     : R-DT
 Version  : 0.20
-Release  : 55
+Release  : 56
 URL      : https://cran.r-project.org/src/contrib/DT_0.20.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.20.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
