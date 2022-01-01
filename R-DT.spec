@@ -4,7 +4,7 @@
 #
 Name     : R-DT
 Version  : 0.20
-Release  : 56
+Release  : 57
 URL      : https://cran.r-project.org/src/contrib/DT_0.20.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.20.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
@@ -40,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637022252
+export SOURCE_DATE_EPOCH=1641004326
 
 %install
-export SOURCE_DATE_EPOCH=1637022252
+export SOURCE_DATE_EPOCH=1641004326
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
