@@ -4,7 +4,7 @@
 #
 Name     : R-DT
 Version  : 0.27
-Release  : 69
+Release  : 70
 URL      : https://cran.r-project.org/src/contrib/DT_0.27.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/DT_0.27.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
@@ -26,9 +26,6 @@ BuildRequires : R-jsonlite
 BuildRequires : R-magrittr
 BuildRequires : R-promises
 BuildRequires : buildreq-R
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 JavaScript library 'DataTables' (typically via R Markdown or Shiny). The
@@ -52,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1674057942
+export SOURCE_DATE_EPOCH=1678816344
 
 %install
-export SOURCE_DATE_EPOCH=1674057942
+export SOURCE_DATE_EPOCH=1678816344
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-DT
 cp %{_builddir}/DT/LICENSE %{buildroot}/usr/share/package-licenses/R-DT/94a81b4765e1de991b3e35b7b41ef2ad3e67087d || :
