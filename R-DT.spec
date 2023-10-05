@@ -4,10 +4,10 @@
 # Using build pattern: R
 #
 Name     : R-DT
-Version  : 0.29
-Release  : 75
-URL      : https://cran.r-project.org/src/contrib/DT_0.29.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/DT_0.29.tar.gz
+Version  : 0.30
+Release  : 76
+URL      : https://cran.r-project.org/src/contrib/DT_0.30.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/DT_0.30.tar.gz
 Summary  : A Wrapper of the JavaScript Library 'DataTables'
 Group    : Development/Tools
 License  : Apache-2.0 GPL-3.0 MIT
@@ -54,22 +54,22 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1693411841
+export SOURCE_DATE_EPOCH=1696521389
 
 %install
-export SOURCE_DATE_EPOCH=1693411841
+export SOURCE_DATE_EPOCH=1696521389
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-DT
 cp %{_builddir}/DT/LICENSE %{buildroot}/usr/share/package-licenses/R-DT/94a81b4765e1de991b3e35b7b41ef2ad3e67087d || :
 cp %{_builddir}/DT/inst/htmlwidgets/lib/datatables/license.txt %{buildroot}/usr/share/package-licenses/R-DT/c2dcfeb8923d23301f9b527b95d8884ab1d74ba7 || :
-export LANG=C.UTF-8
-export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
-export AR=gcc-ar
-export RANLIB=gcc-ranlib
-export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
+LANG=C.UTF-8
+CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
+FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -O3 -flto -fno-semantic-interposition "
+AR=gcc-ar
+RANLIB=gcc-ranlib
+LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
 
 mkdir -p ~/.R
@@ -122,6 +122,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/DT/doc/index.html
 /usr/lib64/R/library/DT/examples/DT-click/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-click/Readme.md
+/usr/lib64/R/library/DT/examples/DT-click/rsconnect/shinyapps.io/yihui/DT-click.dcf
 /usr/lib64/R/library/DT/examples/DT-click/server.R
 /usr/lib64/R/library/DT/examples/DT-click/ui.R
 /usr/lib64/R/library/DT/examples/DT-crosstalk/plotly-persist.R
@@ -132,36 +133,45 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/DT/examples/DT-edit/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-edit/Readme.md
 /usr/lib64/R/library/DT/examples/DT-edit/app.R
+/usr/lib64/R/library/DT/examples/DT-edit/rsconnect/shinyapps.io/yihui/DT-edit.dcf
 /usr/lib64/R/library/DT/examples/DT-filter/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-filter/Readme.md
+/usr/lib64/R/library/DT/examples/DT-filter/rsconnect/shinyapps.io/yihui/DT-filter.dcf
 /usr/lib64/R/library/DT/examples/DT-filter/server.R
 /usr/lib64/R/library/DT/examples/DT-filter/ui.R
 /usr/lib64/R/library/DT/examples/DT-info/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-info/Readme.md
+/usr/lib64/R/library/DT/examples/DT-info/rsconnect/shinyapps.io/yihui/DT-info.dcf
 /usr/lib64/R/library/DT/examples/DT-info/server.R
 /usr/lib64/R/library/DT/examples/DT-info/ui.R
 /usr/lib64/R/library/DT/examples/DT-proxy/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-proxy/Readme.md
+/usr/lib64/R/library/DT/examples/DT-proxy/rsconnect/shinyapps.io/yihui/DT-proxy.dcf
 /usr/lib64/R/library/DT/examples/DT-proxy/server.R
 /usr/lib64/R/library/DT/examples/DT-proxy/ui.R
 /usr/lib64/R/library/DT/examples/DT-radio/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-radio/Readme.md
 /usr/lib64/R/library/DT/examples/DT-radio/app.R
+/usr/lib64/R/library/DT/examples/DT-radio/rsconnect/shinyapps.io/yihui/DT-radio.dcf
 /usr/lib64/R/library/DT/examples/DT-reload/app.R
 /usr/lib64/R/library/DT/examples/DT-rows/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-rows/Readme.md
+/usr/lib64/R/library/DT/examples/DT-rows/rsconnect/shinyapps.io/yihui/DT-rows.dcf
 /usr/lib64/R/library/DT/examples/DT-rows/server.R
 /usr/lib64/R/library/DT/examples/DT-rows/ui.R
 /usr/lib64/R/library/DT/examples/DT-scroller/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-scroller/Readme.md
+/usr/lib64/R/library/DT/examples/DT-scroller/rsconnect/shinyapps.io/yihui/DT-scroller.dcf
 /usr/lib64/R/library/DT/examples/DT-scroller/server.R
 /usr/lib64/R/library/DT/examples/DT-scroller/ui.R
+/usr/lib64/R/library/DT/examples/DT-scroller/www/large.txt
 /usr/lib64/R/library/DT/examples/DT-searchExact/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-searchExact/Readme.md
 /usr/lib64/R/library/DT/examples/DT-searchExact/server.R
 /usr/lib64/R/library/DT/examples/DT-searchExact/ui.R
 /usr/lib64/R/library/DT/examples/DT-selection/DESCRIPTION
 /usr/lib64/R/library/DT/examples/DT-selection/Readme.md
+/usr/lib64/R/library/DT/examples/DT-selection/rsconnect/shinyapps.io/yihui/DT-selection.dcf
 /usr/lib64/R/library/DT/examples/DT-selection/server.R
 /usr/lib64/R/library/DT/examples/DT-selection/ui.R
 /usr/lib64/R/library/DT/examples/DT-shiny/server.R
